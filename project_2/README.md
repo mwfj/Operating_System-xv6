@@ -14,7 +14,7 @@
 
  
 ### The basic idea is to skip the first page(virual address is zero) and make the xv6 begin to the second page when booting the system.
-###The reason is that  original xv6 begin to the first page. When null pointer exist, it will point to the first page---A exist address, which will not trigger the null pointer exception.
+### The reason is that  original xv6 begin to the first page. When null pointer exist, it will point to the first page---A exist address, which will not trigger the null pointer exception.
 
 **Here is what I changed in xv6 to implecate that function:** 
 
