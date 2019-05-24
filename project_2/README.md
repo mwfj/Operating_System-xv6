@@ -1,9 +1,9 @@
-#Project2: Null Pointer and Share Memory
+# Project2: Null Pointer and Share Memory
 
 
-##Part1: Null Poiner Deference
+## Part1: Null Poiner Deference
 ============================================
-###In origianl xv6, unlike other Linux, it doesn't have the function for checking Null Pointer Deference
+### In origianl xv6, unlike other Linux, it doesn't have the function for checking Null Pointer Deference
 **We can see that linux has the Null Pointer Check:**
 
 ![linux](null_pointer_check_in_Linux.png)
@@ -12,8 +12,8 @@
 
 ![original_xv6](no_null_pointer_check_for_original_xv6.png)
 
-
-###The basic idea is to skip the first page(virual address is zero) and make the xv6 begin to the second page when booting the system.
+ 
+### The basic idea is to skip the first page(virual address is zero) and make the xv6 begin to the second page when booting the system.
 ###The reason is that  original xv6 begin to the first page. When null pointer exist, it will point to the first page---A exist address, which will not trigger the null pointer exception.
 
 **Here is what I changed in xv6 to implecate that function:** 
@@ -24,14 +24,15 @@
 4.  Change Makefile: Change `0` to `0x1000` in the line of 149 and 156
 5.  Change p from `0` to `4096` in the function of validatetest(line 1563 in usertests.c) for passing the usertest.
 
-###After I implemented the function above, we can find that system recognize null pointer exception:
+### After I implemented the function above, we can find that system recognize null pointer exception:
  ![nullpointer_xv6](null_pointer_deference_after_change.png)
 
 
-##Part 2: Shared Pages
+## Part 2: Shared Pages
 ============================================
-###The purpose in this part is to create a share memory page, where this page can be shared by multi-pages, in order to fulfill the communication between different pages. In share page memory, multiple pages can use this share memory simultaneously. Specfically, the address  shared by multiply pages should be same and the share page memory won't be freed after the user process freed.
-###The basic idea is to create three funcitons, one for initialize the share page memory(`void shmem_init(void)`), one for get the address of this share page memore(`void* shmem_access(int page_number)`), and one for count how many pages are using this share page memory right now(`int shmem_count(int page_number)`).
+### The purpose in this part is to create a share memory page, where this page can be shared by multi-pages, in order to fulfill the communication between different pages. In share page memory, multiple pages can use this share memory simultaneously. Specfically, the address  shared by multiply pages should be same and the share page memory won't be freed after the user process freed.
+
+### The basic idea is to create three funcitons, one for initialize the share page memory(`void shmem_init(void)`), one for get the address of this share page memore(`void* shmem_access(int page_number)`), and one for count how many pages are using this share page memory right now(`int shmem_count(int page_number)`).
 
 Here is what I changed  in this part:
 
@@ -86,7 +87,7 @@ void shmem_init(void){  int i;  for(i = 0; i < NSHAREPAGE; i++)  {    //ini
 + add the function of `int shmem_count(int page_number)` and `void* shmem_access(int page_number)`  to system call (in `sysproc.c`, `defs.h`, `usys.S`,  `syscall.c` and `syscall.h`)
 + add  `int shmem_count(int page_number)` and `void* shmem_access(int page_number)` in `user.h`(line 26 and 27)
 
-##Testing for Part 2
+## Testing for Part 2
 
 For testing, I have add programs of  `elite.c`, `shmem_test.c` and `testsharemem.c` to test the part 2 and `nullpointer.c` to test part1 in xv6.
 
