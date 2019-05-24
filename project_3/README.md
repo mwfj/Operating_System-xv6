@@ -28,12 +28,14 @@ int sys_clone(void){  char* fcn;  char* stack;  char* arg;  if(
 
 
 ## Thread library: `Kthread.h` and `Kthread.c`
+
 ###In `Kthread.h` and `Kthread.c`, I have implement five function: 
 + `kthread_t thread_create(void (*start_routine)(void *), void *arg);`+ `int thread_join(kthread_t k);`+ `void init_lock(lock_t *lock);`+ `void lock_acquire(lock_t *lock);`+ `void lock_release(lock_t *lock);`
 
 ### And also add this function of `Makefile` in the part of `ULIB`(line of 146)
 
 ## Testing
+
 ###For testing, I create two command line `simple_threads` and `prod_cons` in my xv6(testing code given by TA).
 ![ls_list](ls.png)
 ###The result shown below:
