@@ -76,7 +76,7 @@ Finally, add the `T_Checked` judge code in the function call `sys_open(void)`.
 ```
 
 ### Test
--
+
 
 I write a file call  `filestat.c` to test the file system intergrity of my xv6. Specifically, running the command call `filestat file name` to test.
 My logic is write a file with check type first and then read this file, printing its information.
