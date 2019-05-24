@@ -65,7 +65,7 @@ void shmem_init(void){  int i;  for(i = 0; i < NSHAREPAGE; i++)  {    //ini
   		sm_counts[page_number]);  cprintf("========================================================\n");  cprintf("shmem_access completed\n");  return virtual_addr;}
 ```
 
-+ Modify `exec.c`(line 93-98): Initializa the share page information in the current process
++ Modify `exec.c`(line 93-98): Initialize the share page information in the current process
 
 ```c
   //Project2 Share Memory Begin:  // Initialize the shared page information.  for (int i = 0; i < NSHAREPAGE; i++) {    curproc->shared_page[i] = 0;  }  //Project2 Share Memory End.
