@@ -1,0 +1,39 @@
+which: no qemu in (/usr/share/Modules/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/tnallen/bin:/usr/local/bin:/home/tnallen/.cargo/bin:/home/tnallen/.local/bin:/home/tnallen/bin)
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 2 -m 512 
+c[?7l[2J[0mSeaBIOS (version ?-20180724_192412-buildhw-07.phx2.fedoraproject.org-1.fc29)
+
+
+iPXE (http://ipxe.org) 00:03.0 C980 PCI2.10 PnP PMM+1FF913E0+1FED13E0 C980
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu1: starting 1
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ ls
+.              1 1 512
+..             1 1 512
+README         2 2 2327
+cat            2 3 16160
+echo           2 4 14976
+forktest       2 5 9256
+grep           2 6 18424
+init           2 7 15592
+kill           2 8 15012
+ln             2 9 14896
+ls             2 10 17496
+mkdir          2 11 15128
+rm             2 12 15104
+sh             2 13 27652
+stressfs       2 14 15944
+usertests      2 15 65944
+wc             2 16 16852
+zombie         2 17 14712
+console        3 18 0
+$ d [A[B[B[B[B[B[A[Atest
+exec: fail
+exec [A[B[B[B[B[B[A[Atest failed
+$ QEMU: Terminated
+
