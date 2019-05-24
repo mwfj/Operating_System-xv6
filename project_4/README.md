@@ -1,6 +1,7 @@
 # Project 4: XV6 Scheduler and File Sytsem
 <br>
 ## Part A
+
 ### **XV6 Scheduler**
 
 In this part I modified the function of `scheduler` to `priority-based scheduler`<br>
