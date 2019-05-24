@@ -155,11 +155,17 @@ int main(int argc, char *argv[])
 
 
 ##To run my xv6
+
 ###1. To compile my xv6, you should run the `make` command.
+
 ###2. To run my xv6, you should run the command of `make qemu` or `make qemu-nox`*(hide the qemu console)*. After running my xv6, you can see our test command has added to the system
 ![Alternate text](ls.png)
 **Note that: Since the command of `testgetprocsinfo` is too long to be fully displayed on the console, I have change command `testgetprocsinfo` to `testprocsinfo`**
+
+
 ###3. After execute the `testprocsinfo` command, we can see the result:
 ![Alternate text](result_for_testprocsinfo.png)
+
+
 ###4. Our system call also have not influenced the usertest:
 ![Alternate text](passed_usertest.png)
