@@ -37,7 +37,9 @@ int sys_clone(void){  char* fcn;  char* stack;  char* arg;  if(
 ## Testing
 
 ###For testing, I create two command line `simple_threads` and `prod_cons` in my xv6(testing code given by TA).
+
 ![ls_list](ls.png)
+
 ###The result shown below:
 + simple_threads:
 
