@@ -76,10 +76,3 @@ will need to install a cross-compiler gcc suite capable of producing
 x86 ELF binaries (see https://pdos.csail.mit.edu/6.828/).
 Then run "make TOOLPREFIX=i386-jos-elf-". Now install the QEMU PC
 simulator and run "make qemu".
-# Operating_System-xv6-
-# Operating_System-xv6
-# Operating_System-xv6
-# Operating_System-xv6
-# Operating_System-xv6
-# Operating_System-xv6
-# Operating_System-xv6
