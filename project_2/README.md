@@ -10,7 +10,7 @@
 
 **But original xv6 doesn't have:**
 
-![original_xv6](no_null_pointer_check_for_original xv6.png)
+![original_xv6](no_null_pointer_check_for_original_xv6.png)
 
 
 ###The basic idea is to skip the first page(virual address is zero) and make the xv6 begin to the second page when booting the system.
@@ -25,7 +25,7 @@
 5.  Change p from `0` to `4096` in the function of validatetest(line 1563 in usertests.c) for passing the usertest.
 
 ###After I implemented the function above, we can find that system recognize null pointer exception:
-<center> ![nullpointer_xv6](null_pointer_deference_after_change.png)</center>
+ ![nullpointer_xv6](null_pointer_deference_after_change.png)
 
 
 ##Part 2: Shared Pages
