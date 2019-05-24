@@ -56,7 +56,7 @@ For making this code, I just follow the thought and writing style in the file of
 In my xv6,  I create a subdirectory call `linux/` to put my `fsChecker.c`, fs.img and xv6.img, where those two img file created by the original xv6 system. In addition, I made a Makefile for make and test fsChecker.c.
 
 ### Test
--
+
 For test my fsChecker.c, you should go to `xv6-project4-WufangjieMa/linux` first. Then running `make` command to run complie `fsChecker.c ` and running `make test`  or `./fsChecker.c fs.img` for test my program.<br>
 **Note that** The linux folder has already have the linux program call `fsChecker`, if that is unrunnable, run `make clean` first and then complie it again.
 
