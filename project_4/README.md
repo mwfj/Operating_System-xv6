@@ -1,5 +1,5 @@
 # Project 4: XV6 Scheduler and File Sytsem
-<br>
+
 ## Part A
 
 ### **XV6 Scheduler**
