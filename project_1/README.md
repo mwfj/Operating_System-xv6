@@ -1,9 +1,11 @@
 CPSC-8240-Advanced Operating System Assignment
 ================================================
-#Project 1: Add System call--getprocsinfo()
+# Project 1: Add System call--getprocsinfo()
 
-##Here are the code modified in xv6 for Project1
-###1. Create the file of `procinfo.h` and add the struct of procsinfo to `procinfo.h` *(lines between 1-6)*
+
+## Here are the code modified in xv6 for Project1
+
+### 1. Create the file of `procinfo.h` and add the struct of procsinfo to `procinfo.h` *(lines between 1-6)*
 
 ```c
 struct procinfo
@@ -12,7 +14,7 @@ struct procinfo
   char p_name[16];
 };
 ```
-###2. Include `procinfo.h` first and add the function of `getprocsinfo(struct procinfo*) ` to `proc.c`  *(lines between 68-88)*. 
+### 2. Include `procinfo.h` first and add the function of `getprocsinfo(struct procinfo*) ` to `proc.c`  *(lines between 68-88)*. 
 In this function,  I use it to get all the processes that running in the xv6 system by iterating ptable(defined in `proc.c`) and return the number of running processes. Besides of that, I print each process's number and name in the console.
 
 
@@ -45,7 +47,7 @@ getprocsinfo(struct procinfo* p)
 		
 **Note that `NRPOC` represents maximum number of processes(defined in the file of `param.h`)  and `acquire()` ,`release()` are the function of adding the mutual exclusive spin lock for keeping process safty. `ptable` is a struct which store all the running processes.**
 
-###3. Include `procinfo.h` add the function of `sys_getprocsinfo(void)` to `sysproc.c` *(lines between 95-107)*
+### 3. Include `procinfo.h` add the function of `sys_getprocsinfo(void)` to `sysproc.c` *(lines between 95-107)*
 In `sysproc.c`, I use the function of `sys_gerprocsinfo(void)` to call the low level implemetation (`getprocsinfo(struct procinfo*)` ) mentioned above.
 	
 ```c
@@ -62,12 +64,12 @@ int sys_getprocsinfo(void){
 **Note that `if condition` is to judge whether pointer is out the address space or not.**
 	
 
-###4. Add system call number for the function of sys_getprocsinfo(void) to `sysproc.h`, where the number is 22 *(line 23)*
+### 4. Add system call number for the function of sys_getprocsinfo(void) to `sysproc.h`, where the number is 22 *(line 23)*
 ```c
 #define SYS_getprocsinfo 22	
 ```
 
-###5. Extern `sysgetprocsinfo(void)` to `syscall.c`*(line 107)* and make the connection between that function and their system call number in the file of `syscall.c`*(line 131)*. (`procinfo.h` should also be included in `syscall.c`)
+### 5. Extern `sysgetprocsinfo(void)` to `syscall.c`*(line 107)* and make the connection between that function and their system call number in the file of `syscall.c`*(line 131)*. (`procinfo.h` should also be included in `syscall.c`)
 
 ```c
 extern int sys_getprocsinfo(void);
@@ -78,7 +80,7 @@ extern int sys_getprocsinfo(void);
 ```
 
 
-###6. Add struct procsinfo and the function of `getprocsinfo(struct procinfo*)` to `def.h`*(line 12 and line 125)*
+### 6. Add struct procsinfo and the function of `getprocsinfo(struct procinfo*)` to `def.h`*(line 12 and line 125)*
 
 ```c
 struct procinfo;
@@ -88,7 +90,7 @@ struct procinfo;
 int             getprocsinfo(struct procinfo*);
 ```
 
-###7. To test our system call, we need to add our struct and function to the file of `user.h` and write a new C file call `getprocsinfotest.c`
+### 7. To test our system call, we need to add our struct and function to the file of `user.h` and write a new C file call `getprocsinfotest.c`
 - Add our struct procsinfo and funtion to `user.h` *( line 3 and 28)*.
 
 ```c
@@ -154,18 +156,19 @@ int main(int argc, char *argv[])
 **Note that: Since the command of `testgetprocsinfo` is too long to be fully displayed on the console, I have change command `testgetprocsinfo` to `testprocsinfo`**
 
 
-##To run my xv6
+## To run my xv6
 
-###1. To compile my xv6, you should run the `make` command.
+### 1. To compile my xv6, you should run the `make` command.
 
-###2. To run my xv6, you should run the command of `make qemu` or `make qemu-nox`*(hide the qemu console)*. After running my xv6, you can see our test command has added to the system
+### 2. To run my xv6, you should run the command of `make qemu` or `make qemu-nox`*(hide the qemu console)*. After running my xv6, you can see our test command has added to the system
+
 ![Alternate text](ls.png)
 **Note that: Since the command of `testgetprocsinfo` is too long to be fully displayed on the console, I have change command `testgetprocsinfo` to `testprocsinfo`**
 
 
-###3. After execute the `testprocsinfo` command, we can see the result:
+### 3. After execute the `testprocsinfo` command, we can see the result:
 ![Alternate text](result_for_testprocsinfo.png)
 
 
-###4. Our system call also have not influenced the usertest:
+### 4. Our system call also have not influenced the usertest:
 ![Alternate text](passed_usertest.png)
