@@ -1,7 +1,7 @@
-#Project 4: XV6 Scheduler and File Sytsem
+# Project 4: XV6 Scheduler and File Sytsem
 <br>
-##Part A
-###**XV6 Scheduler**
+## Part A
+### **XV6 Scheduler**
 
 In this part I modified the function of `scheduler` to `priority-based scheduler`<br>
 Specifically, I used the new proc structure that TA give us, which add   `uint sched_time;`|  `uint lop_ticks; `|`uint hip_ticks; `|`enum procpri pri;`<br>
@@ -24,11 +24,12 @@ voidscheduler(void){  struct proc *p;  uint tdif;  struct cpu *c = mycpu();
 ```
 
 **Fourth**, add system call for`int getpinfo(struct pstat* ps)`and `int setpri(int priority)` in the file of `defs.h`, `syscall.c`, `syscall.h`, `sysproc.c`, `usys.S` and `user.h` just like what we do in previous project.
-###Test:
+
+### Test:
 For testing, I add the program TA give us in my xv6 system called **`testpriority`**. When you enter my xv6, just input testpriority command to test my scheduler. My scheduler has passed the test!
 
-##Part B
-###1) File System Checker
+## Part B
+### 1) File System Checker
 
 The goal of makeing the File system checker:
 
@@ -53,12 +54,12 @@ The goal of makeing the File system checker:
 For making this code, I just follow the thought and writing style in the file of `fs.c`and `mkfs.c`. <br>
 In my xv6,  I create a subdirectory call `linux/` to put my `fsChecker.c`, fs.img and xv6.img, where those two img file created by the original xv6 system. In addition, I made a Makefile for make and test fsChecker.c.
 
-###Test
+### Test
 -
 For test my fsChecker.c, you should go to `xv6-project4-WufangjieMa/linux` first. Then running `make` command to run complie `fsChecker.c ` and running `make test`  or `./fsChecker.c fs.img` for test my program.<br>
 **Note that** The linux folder has already have the linux program call `fsChecker`, if that is unrunnable, run `make clean` first and then complie it again.
 
-###2) File System Intergrity
+### 2) File System Intergrity
 In this part, I add protection form data corruption. Specifically,  I add new type of state call `#define T_CHECKED 4` in `stat.h` first. and I added a parameter called `uchar checksum;` in the structure of stat.<br>
 Then, I modified the functinon the four function below in `fs.c`: 
 
@@ -73,7 +74,7 @@ Finally, add the `T_Checked` judge code in the function call `sys_open(void)`.
  if(omode & O_CREATE){    //FileSystem Intergrity    if (omode & O_CHECKED) {      ip = create(path, T_CHECKED, 0, 0);    }else{      ip = create(path, T_FILE, 0, 0);    }    if(ip == 0){      end_op();      return -1;    }
 ```
 
-###Test
+### Test
 -
 
 I write a file call  `filestat.c` to test the file system intergrity of my xv6. Specifically, running the command call `filestat file name` to test.
