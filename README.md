@@ -2,6 +2,16 @@ This Repo is the assignments of CPSC-8240-Advanced Operating System(Based on xv6
 
 This project is adding some new  functions to the [xv6 system](https://pdos.csail.mit.edu/6.828/2012/xv6.html) developed by [MIT PDOS](https://pdos.csail.mit.edu/)
 
+To Run my project or original xv6, you should install qemu in your linux machine first; <br>
+Then run:
+
++   `make` command 
++   `make qemu` or `make qemu-nox`
+
+For quiting xv6, you should press `ctrl+A+C` and then insert `quit` command
+
+For  the specific test, you should follow the intruction from README in each project folder
+
 This project mainly divided into four part:
 
 + **Project1**: xv6 intro: This first project is just a warmup, and thus relatively light on work. 
@@ -23,7 +33,6 @@ simply returns the PID value and process name for each of the processes that exi
 
 
 =========================================================================
-
 
 **The Information below comes from the Original XV6**
 
