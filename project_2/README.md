@@ -5,9 +5,14 @@
 ============================================
 ###In origianl xv6, unlike other Linux, it doesn't have the function for checking Null Pointer Deference
 **We can see that linux has the Null Pointer Check:**
-<center> ![linux](null_pointer_check_in_Linux.png)</center>
+
+![linux](null_pointer_check_in_Linux.png)
+
 **But original xv6 doesn't have:**
-<center> ![original_xv6](no_null_pointer_check_for_original xv6.png)</center>
+
+![original_xv6](no_null_pointer_check_for_original xv6.png)
+
+
 ###The basic idea is to skip the first page(virual address is zero) and make the xv6 begin to the second page when booting the system.
 ###The reason is that  original xv6 begin to the first page. When null pointer exist, it will point to the first page---A exist address, which will not trigger the null pointer exception.
 
@@ -85,7 +90,7 @@ void shmem_init(void){  int i;  for(i = 0; i < NSHAREPAGE; i++)  {    //ini
 
 For testing, I have add programs of  `elite.c`, `shmem_test.c` and `testsharemem.c` to test the part 2 and `nullpointer.c` to test part1 in xv6.
 
-<center> ![testing_list](testing_list.png)</center>
+![testing_list](testing_list.png)
 
 For testing part1, run the command `nullpointer`
 
@@ -96,8 +101,9 @@ Specifically,  I created to child processes and one parent process. Those proces
 
 The testing result of part 2:
 
-<center> ![testing_part2](testsharemem.png)</center>
-<center> ![shmem_test](shmem_test.png) </center>
+![testing_part2](testsharemem.png)
+
+![shmem_test](shmem_test.png)
 
 For the result in the null pointer deference, you can check the part 1 in this README.
 
