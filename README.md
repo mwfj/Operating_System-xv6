@@ -1,4 +1,4 @@
-This Repo is the assignments of CPSC-8240-Advanced Operating System(Based on xv6)
+This Repo is the assignments of Advanced Operating System(Based on xv6)
 
 This project is to add some new  functions to the [xv6 system](https://pdos.csail.mit.edu/6.828/2012/xv6.html) developed by [MIT PDOS](https://pdos.csail.mit.edu/)
 
