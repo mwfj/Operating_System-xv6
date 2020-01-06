@@ -31,9 +31,9 @@ simply returns the PID value and process name for each of the processes that exi
 		
 		2.  File system integrity: to be done in the xv6 environment.In this part, you'll be changing the existing xv6 file system to add protection from data corruption. In real storage systems, silent corruption of data is a major concern, and thus many techniques are usually put in place to detect (and recover) from blocks that go bad.<br>Specifically, you'll do three things. 
 		
-			+ First, you'll modify the code to allow the user to create a new type of file that keeps a **checksum** for every block it points to. Checksums are used by modern storage systems in order to detect silent corruption.
-			+ Second, you'll have to change the file system to handle reads and writes differently for files with checksums. Specifically, when writing out such a file, you'll have to create a checksum for every block of the file; when reading such a file, you'll have to check and make sure the block still matches the stored checksum, returning an error code (-1) if it doesn't. In this way, your file system will be able to detect corruption!
-			+ Third, for information purposes, you will also modify the stat() system call to dump some information about the file. Thus, you should write a little program that, given a file name, not only prints out the file's size, etc., but also some information about the file's checksums
+			+ **First**, you'll modify the code to allow the user to create a new type of file that keeps a **checksum** for every block it points to. Checksums are used by modern storage systems in order to detect silent corruption.
+			+ **Second**, you'll have to change the file system to handle reads and writes differently for files with checksums. Specifically, when writing out such a file, you'll have to create a checksum for every block of the file; when reading such a file, you'll have to check and make sure the block still matches the stored checksum, returning an error code (-1) if it doesn't. In this way, your file system will be able to detect corruption!
+			+ **Third**, for information purposes, you will also modify the stat() system call to dump some information about the file. Thus, you should write a little program that, given a file name, not only prints out the file's size, etc., but also some information about the file's checksums
 
 
 =========================================================================
