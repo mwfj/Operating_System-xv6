@@ -12,7 +12,7 @@ For quiting xv6, you should press `ctrl+A+C` and then insert `quit` command
 
 For  the specific test, you should follow the instruction from README in each project folder
 
-This project mainly divided into four part:
+This project mainly divided into four parts:
 
 + **Project1**: xv6 intro: This first project is just a warmup, and thus relatively light on work. 
 The goal of the project is simple: to add a system call to xv6. Your system call, getprocsinfo() , 
