@@ -32,7 +32,7 @@
 ============================================
 ### The purpose in this part is to create a share memory page, where this page can be shared by multi-pages, in order to fulfill the communication between different pages. In share page memory, multiple pages can use this share memory simultaneously. Specfically, the address  shared by multiply pages should be same and the share page memory won't be freed after the user process freed.
 
-### The basic idea is to create three funcitons, one for initialize the share page memory(`void shmem_init(void)`), one for get the address of this share page memore(`void* shmem_access(int page_number)`), and one for count how many pages are using this share page memory right now(`int shmem_count(int page_number)`).
+### The basic idea is to create three funcitons, one for initialize the share page memory(`void shmem_init(void)`), one for get the address of this share page memory(`void* shmem_access(int page_number)`), and one for count how many pages are using this share page memory right now(`int shmem_count(int page_number)`).
 
 Here is what I changed  in this part:
 
