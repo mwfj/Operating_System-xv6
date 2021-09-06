@@ -10,7 +10,7 @@ Then run:
 
 For quiting xv6, you should press `ctrl+A+C` and then insert `quit` command
 
-For  the specific test, you should follow the instruction from README in each project folder
+For  the specific test, you should follow the instruction from README in each project folder.
 
 This project mainly divided into four parts:
 
